@@ -1,0 +1,11 @@
+jaffle_shop:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      threads: 16
+      database: analog-fastness-472715-j6
+      schema: dbt_projects
+      method: oauth
+      location: asia-south1
+      dataproc_batch: null

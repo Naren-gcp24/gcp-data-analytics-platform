@@ -1,0 +1,22 @@
+name: 'repo_root'
+version: '1.0.0'
+config-version: 2
+
+# Use the same profile name as the subprojects
+profile: 'jaffle_shop'
+
+# Point paths to the dbt_fundamentals project so running dbt from repo root
+# will operate on that project by default.
+model-paths: ["dbt_fundamentals/models"]
+seed-paths: ["dbt_fundamentals/seeds"]
+macro-paths: ["dbt_fundamentals/macros"]
+analysis-paths: ["dbt_fundamentals/analysis"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  dbt_fundamentals:
+    +materialized: view
